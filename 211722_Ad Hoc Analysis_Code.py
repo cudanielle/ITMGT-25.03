@@ -212,14 +212,15 @@ cs = pd.DataFrame(data=customers)
 cs=cs.T
 
 
+
+
+
 ##### VISUALS AND ADDITIONAL INFORMATION #####
 ## Breakdown for the Count and Sales of each Item per Month
 bd
 
-
 ## Customer Metric Data
 cs
-
 
 ## Visual Data of the Sales
 # Obtaining the sum of the sales per month and plotting it out in a vertical bar graph
@@ -229,7 +230,6 @@ March_Sales=sum(bd['March Sales'])
 April_Sales=sum(bd['April Sales'])
 May_Sales=sum(bd['May Sales'])
 June_Sales=sum(bd['June Sales'])
-
 
 Month=['January','February','March','April','May','June']
 Month_Sales=[January_Sales,February_Sales,March_Sales,April_Sales,May_Sales,June_Sales]
@@ -246,7 +246,6 @@ Item_Count=[]
 for i in range (len(items)):
     count=df.loc[((df['transaction_items'])== items[i]), ['item count']].sum()
     Item_Count.append(int(count))
-
 
 plt.barh (y=items,width=Item_Count,color='darkseagreen')
 plt.xlabel("Number of Items Sold")
@@ -268,7 +267,6 @@ plt.xlabel("Months")
 plt.ylabel("Number of Customers")
 plt.title("Customer Metrics")
 ax.legend()
-
 
 ## Frequency of Age Groups of the (Unique) Customers by intervals of 10
 # Making the age column
@@ -345,7 +343,6 @@ plt.ylabel("Age Group")
 plt.title("Customers by Age Group")
 plt.axis([400, 800, None, None])
 
-
 ## Sex of Customers Data
 # Getting the number of F and M for the sex of the unique customers and plotting it out in a vertical bar graph
 FCount=len(df2[df2['sex'].str.contains("F")])
@@ -360,7 +357,6 @@ plt.ylabel("Number of Customers")
 plt.title("Number of Customers Based on Sex")
 plt.axis([None, None, 4000, 4300])
 plt.bar
-
 
 ## Location Data
 # https://www.geeksforgeeks.org/pandas-groupby-count-occurrences-in-column/
